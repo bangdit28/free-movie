@@ -4,17 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CineMAX - Hiburan Tanpa Batas</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Impor Font Modern (Bebas Neue untuk Judul, Montserrat untuk Body) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Ikon (Font Awesome) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 </head>
 <body>
 
-    <!-- 1. HEADER DENGAN EFEK FROSTED GLASS -->
     <header class="main-header">
         <div class="container">
             <a href="#" class="logo">CineMAX</a>
@@ -35,16 +30,13 @@
         </div>
     </header>
 
-    <!-- 2. HERO SECTION DENGAN VIDEO BACKGROUND -->
     <section class="hero-section">
         <div class="hero-video-wrapper">
-            <!-- Ganti dengan video trailer sinematik yang pendek & looping -->
             <video src="https://assets.mixkit.co/videos/preview/mixkit-planets-in-space-42289-large.mp4" autoplay muted loop playsinline class="hero-video"></video>
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1 class="featured-title-logo">
-                <!-- Gunakan gambar logo judul film untuk efek terbaik -->
                 <img src="https://www.themoviedb.org/t/p/original/s4c9Q2dttn7stS3a7oIzf7k0weC.png" alt="Dune Logo">
             </h1>
             <p class="featured-desc">Perjalanan seorang pahlawan mitos dan emosional, "Dune" menceritakan kisah Paul Atreides, seorang pemuda brilian yang ditakdirkan untuk hal-hal besar.</p>
@@ -55,52 +47,34 @@
         </div>
     </section>
 
-    <!-- 3. KONTEN UTAMA DENGAN CAROUSEL MODERN -->
     <main class="main-content">
-        
-        <!-- Baris Kategori 1: Paling Populer -->
         <section class="content-row">
             <h2 class="row-title">Paling Populer</h2>
             <div class="carousel-wrapper">
                 <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
-                <div class="movie-carousel">
-                    <!-- Kartu Film Interaktif -->
-                    <div class="movie-card">
-                        <img src="https://image.tmdb.org/t/p/w500/AtsgWhDnHTq68L0lLsUrCnM7TjG.jpg" alt="Movie 1">
-                        <div class="card-overlay">
-                            <div class="card-actions">
-                                <button class="action-btn"><i class="fas fa-play"></i></button>
-                                <button class="action-btn"><i class="fas fa-plus"></i></button>
-                                <button class="action-btn"><i class="fas fa-thumbs-up"></i></button>
-                            </div>
-                            <h3 class="card-title">Godzilla x Kong</h3>
-                        </div>
-                    </div>
-                    <div class="movie-card">
-                        <img src="https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg" alt="Movie 2">
-                        <div class="card-overlay"><h3 class="card-title">Dune: Part Two</h3></div>
-                    </div>
-                    <div class="movie-card">
-                        <img src="https://image.tmdb.org/t/p/w500/d5NXSklXo0qyIY2VFIh5dcfKEjo.jpg" alt="Movie 3">
-                        <div class="card-overlay"><h3 class="card-title">The Batman</h3></div>
-                    </div>
-                     <div class="movie-card">
-                        <img src="https://image.tmdb.org/t/p/w500/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg" alt="Movie 4">
-                        <div class="card-overlay"><h3 class="card-title">Poor Things</h3></div>
-                    </div>
-                    <div class="movie-card">
-                        <img src="https://image.tmdb.org/t/p/w500/sR0SpCrXamlIkYMdfz83sFn5AtB.jpg" alt="Movie 5">
-                        <div class="card-overlay"><h3 class="card-title">The Marvels</h3></div>
-                    </div>
-                </div>
+                <div class="movie-carousel" id="populer-carousel"></div>
                 <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
             </div>
         </section>
-        
-        <!-- Tambahkan section .content-row lain di sini untuk kategori berbeda -->
-
+        <section class="content-row">
+            <h2 class="row-title">Baru Dirilis</h2>
+            <div class="carousel-wrapper">
+                <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="movie-carousel" id="baru-carousel"></div>
+                <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+        <section class="content-row">
+            <h2 class="row-title">Film Indonesia</h2>
+            <div class="carousel-wrapper">
+                <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="movie-carousel" id="indonesia-carousel"></div>
+                <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
     </main>
 
-    <script src="script.js"></script>
+    <script src="assets/data/database.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
