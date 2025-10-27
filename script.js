@@ -1,20 +1,33 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+    // --- EFEK HEADER SAAT SCROLL ---
     const header = document.querySelector('.main-header');
-
-    // Tambahkan background pada header saat user melakukan scroll
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 20) {
+        if (window.scrollY > 50) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
         }
     });
 
-    // TODO (Untuk Pengembangan Lanjutan):
-    // 1. Ambil data film dari sebuah API (Application Programming Interface).
-    // 2. Buat fungsi untuk mengisi (populate) setiap .movie-carousel dengan data tersebut.
-    // 3. Buat fungsionalitas modal/pop-up saat sebuah .movie-card diklik untuk menampilkan info detail film.
-    // 4. Tambahkan tombol "next" dan "previous" untuk menggeser carousel.
-    
+    // --- LOGIKA CAROUSEL MODERN ---
+    const carousels = document.querySelectorAll('.carousel-wrapper');
+
+    carousels.forEach(wrapper => {
+        const carousel = wrapper.querySelector('.movie-carousel');
+        const prevBtn = wrapper.querySelector('.carousel-arrow.prev');
+        const nextBtn = wrapper.querySelector('.carousel-arrow.next');
+        
+        if (!carousel || !prevBtn || !nextBtn) return;
+
+        nextBtn.addEventListener('click', () => {
+            const scrollAmount = carousel.clientWidth * 0.8; // Gulir 80% dari lebar terlihat
+            carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+
+        prevBtn.addEventListener('click', () => {
+            const scrollAmount = carousel.clientWidth * 0.8;
+            carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+    });
 });
