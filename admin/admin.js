@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: document.getElementById('title').value,
             description: document.getElementById('description').value,
             posterUrl: document.getElementById('posterUrl').value,
+            trailerUrl: document.getElementById('trailerUrl').value,
             category: document.getElementById('category').value,
         };
         movieDatabase.push(newMovie);
@@ -54,4 +55,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     renderMovieTable();
+
 });
