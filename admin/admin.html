@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel - CineMAX</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CineMAX Content Manager</h1>
+        <div class="form-container">
+            <h2>Tambah Film Baru</h2>
+            <form id="add-movie-form">
+                <input type="text" id="title" placeholder="Judul Film" required>
+                <textarea id="description" placeholder="Deskripsi Singkat" required></textarea>
+                <input type="url" id="posterUrl" placeholder="URL Poster Film" required>
+                <select id="category" required>
+                    <option value="">-- Pilih Kategori --</option>
+                    <option value="populer">Paling Populer</option>
+                    <option value="baru">Baru Dirilis</option>
+                    <option value="indonesia">Film Indonesia</option>
+                </select>
+                <button type="submit">Tambah Film</button>
+            </form>
+        </div>
+        <div class="table-container">
+            <h2>Daftar Film Saat Ini</h2>
+            <table id="movie-list-table">
+                <thead>
+                    <tr>
+                        <th>Poster</th>
+                        <th>Judul</th>
+                        <th>Kategori</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="movie-list-body"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="../assets/data/database.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
