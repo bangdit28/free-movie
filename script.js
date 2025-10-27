@@ -1,44 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // --- FUNGSI MODAL TRAILER ---
-    const modal = document.getElementById('trailer-modal');
-    const playBtn = document.getElementById('play-trailer-btn');
-    const closeBtn = document.querySelector('.close-btn');
-    const trailerFrame = modal.querySelector('iframe');
-    const originalSrc = trailerFrame.src;
-
-    // Tampilkan modal saat tombol "Tonton Trailer" diklik
-    playBtn.addEventListener('click', () => {
-        modal.style.display = 'block';
-        // Tambahkan parameter autoplay saat modal dibuka
-        trailerFrame.src = originalSrc + "?autoplay=1"; 
-    });
-
-    // Sembunyikan modal saat tombol close diklik
-    closeBtn.addEventListener('click', () => {
-        modal.style.display = 'none';
-        // Hentikan video dengan menghapus src
-        trailerFrame.src = originalSrc; 
-    });
-
-    // Sembunyikan modal saat area di luar konten modal diklik
-    window.addEventListener('click', (event) => {
-        if (event.target == modal) {
-            modal.style.display = 'none';
-             // Hentikan video dengan menghapus src
-            trailerFrame.src = originalSrc;
-        }
-    });
-
-
-    // --- EFEK NAVIGASI TRANSPARAN SAAT SCROLL ---
     const header = document.querySelector('.main-header');
+
+    // Tambahkan background pada header saat user melakukan scroll
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.style.background = 'rgba(0, 0, 0, 0.9)';
+        if (window.scrollY > 20) {
+            header.classList.add('scrolled');
         } else {
-            header.style.background = 'rgba(0, 0, 0, 0.5)';
+            header.classList.remove('scrolled');
         }
     });
 
+    // TODO (Untuk Pengembangan Lanjutan):
+    // 1. Ambil data film dari sebuah API (Application Programming Interface).
+    // 2. Buat fungsi untuk mengisi (populate) setiap .movie-carousel dengan data tersebut.
+    // 3. Buat fungsionalitas modal/pop-up saat sebuah .movie-card diklik untuk menampilkan info detail film.
+    // 4. Tambahkan tombol "next" dan "previous" untuk menggeser carousel.
+    
 });
