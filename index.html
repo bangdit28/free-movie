@@ -3,101 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NusantaraFlix - Tonton di Mana Saja</title>
+    <title>CineMAX - Hiburan Tanpa Batas</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Impor Font -->
+    <!-- Impor Font Modern (Bebas Neue untuk Judul, Montserrat untuk Body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- Ikon (Font Awesome) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 </head>
 <body>
 
-    <!-- 1. HEADER / NAVIGASI UTAMA -->
+    <!-- 1. HEADER DENGAN EFEK FROSTED GLASS -->
     <header class="main-header">
         <div class="container">
-            <a href="#" class="logo">NusantaraFlix</a>
+            <a href="#" class="logo">CineMAX</a>
             <nav class="main-nav">
                 <a href="#" class="nav-link active">Beranda</a>
-                <a href="#" class="nav-link">Serial TV</a>
+                <a href="#" class="nav-link">Serial</a>
                 <a href="#" class="nav-link">Film</a>
-                <a href="#" class="nav-link">Baru & Populer</a>
+                <a href="#" class="nav-link">Daftar Saya</a>
             </nav>
             <div class="user-nav">
-                <i class="fas fa-search nav-icon"></i>
-                <i class="fas fa-bell nav-icon"></i>
-                <img src="https://via.placeholder.com/40" alt="User Profile" class="profile-pic">
+                <button class="nav-action"><i class="fas fa-search"></i></button>
+                <button class="nav-action"><i class="fas fa-bell"></i></button>
+                <div class="profile-dropdown">
+                    <img src="https://i.pravatar.cc/40" alt="User Profile" class="profile-pic">
+                    <i class="fas fa-caret-down"></i>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- 2. HERO SECTION (FILM UNGGULAN) -->
+    <!-- 2. HERO SECTION DENGAN VIDEO BACKGROUND -->
     <section class="hero-section">
-        <!-- Background akan diatur via CSS -->
+        <div class="hero-video-wrapper">
+            <!-- Ganti dengan video trailer sinematik yang pendek & looping -->
+            <video src="https://assets.mixkit.co/videos/preview/mixkit-planets-in-space-42289-large.mp4" autoplay muted loop playsinline class="hero-video"></video>
+        </div>
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="featured-title">Nama Film Unggulan</h1>
-            <p class="featured-desc">Ini adalah sinopsis singkat beberapa kalimat tentang film unggulan yang sedang ditampilkan di hero section.</p>
+            <h1 class="featured-title-logo">
+                <!-- Gunakan gambar logo judul film untuk efek terbaik -->
+                <img src="https://www.themoviedb.org/t/p/original/s4c9Q2dttn7stS3a7oIzf7k0weC.png" alt="Dune Logo">
+            </h1>
+            <p class="featured-desc">Perjalanan seorang pahlawan mitos dan emosional, "Dune" menceritakan kisah Paul Atreides, seorang pemuda brilian yang ditakdirkan untuk hal-hal besar.</p>
             <div class="hero-buttons">
                 <button class="btn btn-play"><i class="fas fa-play"></i> Putar</button>
-                <button class="btn btn-info"><i class="fas fa-info-circle"></i> Info Lengkap</button>
+                <button class="btn btn-info"><i class="fas fa-info-circle"></i> Info Selengkapnya</button>
             </div>
         </div>
-        <div class="hero-fade"></div>
     </section>
 
-    <!-- 3. KONTEN UTAMA (BARIS FILM) -->
+    <!-- 3. KONTEN UTAMA DENGAN CAROUSEL MODERN -->
     <main class="main-content">
         
-        <!-- Baris Kategori 1: Sedang Tren -->
+        <!-- Baris Kategori 1: Paling Populer -->
         <section class="content-row">
-            <h2 class="row-title">Sedang Tren</h2>
-            <div class="movie-carousel">
-                <!-- Kartu Film -->
-                <div class="movie-card">
-                    <img src="https://via.placeholder.com/200x300/e81313/ffffff?text=Movie+1" alt="Movie 1">
+            <h2 class="row-title">Paling Populer</h2>
+            <div class="carousel-wrapper">
+                <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="movie-carousel">
+                    <!-- Kartu Film Interaktif -->
+                    <div class="movie-card">
+                        <img src="https://image.tmdb.org/t/p/w500/AtsgWhDnHTq68L0lLsUrCnM7TjG.jpg" alt="Movie 1">
+                        <div class="card-overlay">
+                            <div class="card-actions">
+                                <button class="action-btn"><i class="fas fa-play"></i></button>
+                                <button class="action-btn"><i class="fas fa-plus"></i></button>
+                                <button class="action-btn"><i class="fas fa-thumbs-up"></i></button>
+                            </div>
+                            <h3 class="card-title">Godzilla x Kong</h3>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg" alt="Movie 2">
+                        <div class="card-overlay"><h3 class="card-title">Dune: Part Two</h3></div>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://image.tmdb.org/t/p/w500/d5NXSklXo0qyIY2VFIh5dcfKEjo.jpg" alt="Movie 3">
+                        <div class="card-overlay"><h3 class="card-title">The Batman</h3></div>
+                    </div>
+                     <div class="movie-card">
+                        <img src="https://image.tmdb.org/t/p/w500/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg" alt="Movie 4">
+                        <div class="card-overlay"><h3 class="card-title">Poor Things</h3></div>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://image.tmdb.org/t/p/w500/sR0SpCrXamlIkYMdfz83sFn5AtB.jpg" alt="Movie 5">
+                        <div class="card-overlay"><h3 class="card-title">The Marvels</h3></div>
+                    </div>
                 </div>
-                <div class="movie-card">
-                    <img src="https://via.placeholder.com/200x300/135ee8/ffffff?text=Movie+2" alt="Movie 2">
-                </div>
-                <div class="movie-card">
-                    <img src="https://via.placeholder.com/200x300/13e85e/000000?text=Movie+3" alt="Movie 3">
-                </div>
-                <div class="movie-card">
-                    <img src="https://via.placeholder.com/200x300/e8e513/000000?text=Movie+4" alt="Movie 4">
-                </div>
-                 <div class="movie-card">
-                    <img src="https://via.placeholder.com/200x300/e813c9/ffffff?text=Movie+5" alt="Movie 5">
-                </div>
-            </div>
-        </section>
-
-        <!-- Baris Kategori 2: Film Indonesia Populer -->
-        <section class="content-row">
-            <h2 class="row-title">Film Indonesia Populer</h2>
-            <div class="movie-carousel">
-                <!-- Kartu Film -->
-                <div class="movie-card">
-                    <img src="https://via.placeholder.com/200x300/333/fff?text=Lokal+1" alt="Movie 1">
-                </div>
-                <div class="movie-card">
-                    <img src="https://via.placeholder.com/200x300/333/fff?text=Lokal+2" alt="Movie 2">
-                </div>
-                <div class="movie-card">
-                    <img src="https://via.placeholder.com/200x300/333/fff?text=Lokal+3" alt="Movie 3">
-                </div>
-                <div class="movie-card">
-                    <img src="https://via.placeholder.com/200x300/333/fff?text=Lokal+4" alt="Movie 4">
-                </div>
-                 <div class="movie-card">
-                    <img src="https://via.placeholder.com/200x300/333/fff?text=Lokal+5" alt="Movie 5">
-                </div>
+                <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
             </div>
         </section>
         
+        <!-- Tambahkan section .content-row lain di sini untuk kategori berbeda -->
+
     </main>
-    
-    <!-- FOOTER akan ditambahkan jika perlu -->
 
     <script src="script.js"></script>
 </body>
