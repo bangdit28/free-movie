@@ -3,145 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CineVerse - Judul Film Anda</title>
+    <title>NusantaraFlix - Tonton di Mana Saja</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Impor Font dari Google Fonts -->
+    <!-- Impor Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Ikon (Contoh menggunakan Font Awesome) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Ikon (Font Awesome) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 </head>
 <body>
 
-    <!-- NAVIGASI / HEADER -->
+    <!-- 1. HEADER / NAVIGASI UTAMA -->
     <header class="main-header">
         <div class="container">
-            <a href="#" class="logo">CineVerse</a>
-            <nav>
-                <a href="#sinopsis">Sinopsis</a>
-                <a href="#galeri">Galeri</a>
-                <a href="#pemeran">Pemeran</a>
-                <a href="#jadwal">Jadwal</a>
+            <a href="#" class="logo">NusantaraFlix</a>
+            <nav class="main-nav">
+                <a href="#" class="nav-link active">Beranda</a>
+                <a href="#" class="nav-link">Serial TV</a>
+                <a href="#" class="nav-link">Film</a>
+                <a href="#" class="nav-link">Baru & Populer</a>
             </nav>
+            <div class="user-nav">
+                <i class="fas fa-search nav-icon"></i>
+                <i class="fas fa-bell nav-icon"></i>
+                <img src="https://via.placeholder.com/40" alt="User Profile" class="profile-pic">
+            </div>
         </div>
     </header>
 
-    <!-- 1. HERO SECTION -->
-    <section class="hero">
-        <!-- Latar belakang video akan ditambahkan via CSS -->
-        <div class="hero-video-bg">
-             <video autoplay muted loop playsinline>
-                <!-- Ganti dengan link video trailer Anda -->
-                <source src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
-            </video>
-        </div>
+    <!-- 2. HERO SECTION (FILM UNGGULAN) -->
+    <section class="hero-section">
+        <!-- Background akan diatur via CSS -->
         <div class="hero-content">
-            <h1 class="movie-title">JUDUL FILM ANDA</h1>
-            <p class="tagline">Tagline yang menarik dan epik ada di sini.</p>
-            <div class="cta-buttons">
-                <button class="btn btn-primary" id="play-trailer-btn"><i class="fas fa-play"></i> Tonton Trailer</button>
-                <button class="btn btn-secondary">Beli Tiket</button>
+            <h1 class="featured-title">Nama Film Unggulan</h1>
+            <p class="featured-desc">Ini adalah sinopsis singkat beberapa kalimat tentang film unggulan yang sedang ditampilkan di hero section.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-play"><i class="fas fa-play"></i> Putar</button>
+                <button class="btn btn-info"><i class="fas fa-info-circle"></i> Info Lengkap</button>
             </div>
         </div>
+        <div class="hero-fade"></div>
     </section>
 
-    <!-- 2. SINOPSIS & DETAIL -->
-    <section id="sinopsis" class="section-padding">
-        <div class="container synopsis-grid">
-            <div class="poster">
-                <!-- Ganti dengan URL poster film Anda -->
-                <img src="https://via.placeholder.com/400x600.png?text=Poster+Film" alt="Poster Film">
-            </div>
-            <div class="details">
-                <h2>Sinopsis</h2>
-                <p>Ini adalah deskripsi singkat mengenai film yang akan memikat penonton untuk mengetahui lebih lanjut. Ceritakan premis utama tanpa membocorkan plot penting.</p>
-                <div class="info-list">
-                    <p><strong>Sutradara:</strong> Nama Sutradara</p>
-                    <p><strong>Genre:</strong> Aksi, Fiksi Ilmiah</p>
-                    <p><strong>Durasi:</strong> 2 jam 15 menit</p>
-                    <p><strong>Rating:</strong> <i class="fas fa-star"></i> 8.5/10 (IMDb)</p>
+    <!-- 3. KONTEN UTAMA (BARIS FILM) -->
+    <main class="main-content">
+        
+        <!-- Baris Kategori 1: Sedang Tren -->
+        <section class="content-row">
+            <h2 class="row-title">Sedang Tren</h2>
+            <div class="movie-carousel">
+                <!-- Kartu Film -->
+                <div class="movie-card">
+                    <img src="https://via.placeholder.com/200x300/e81313/ffffff?text=Movie+1" alt="Movie 1">
+                </div>
+                <div class="movie-card">
+                    <img src="https://via.placeholder.com/200x300/135ee8/ffffff?text=Movie+2" alt="Movie 2">
+                </div>
+                <div class="movie-card">
+                    <img src="https://via.placeholder.com/200x300/13e85e/000000?text=Movie+3" alt="Movie 3">
+                </div>
+                <div class="movie-card">
+                    <img src="https://via.placeholder.com/200x300/e8e513/000000?text=Movie+4" alt="Movie 4">
+                </div>
+                 <div class="movie-card">
+                    <img src="https://via.placeholder.com/200x300/e813c9/ffffff?text=Movie+5" alt="Movie 5">
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 3. GALERI VISUAL -->
-    <section id="galeri" class="section-padding bg-dark">
-        <div class="container">
-            <h2 class="section-title">Galeri</h2>
-            <div class="gallery-grid">
-                <!-- Ganti dengan gambar-gambar dari film Anda -->
-                <img src="https://via.placeholder.com/600x400.png?text=Adegan+1" alt="Galeri 1">
-                <img src="https://via.placeholder.com/600x400.png?text=Adegan+2" alt="Galeri 2">
-                <img src="https://via.placeholder.com/600x400.png?text=Behind+the+Scenes" alt="Galeri 3">
-                <img src="https://via.placeholder.com/600x400.png?text=Poster+Karakter" alt="Galeri 4">
+        <!-- Baris Kategori 2: Film Indonesia Populer -->
+        <section class="content-row">
+            <h2 class="row-title">Film Indonesia Populer</h2>
+            <div class="movie-carousel">
+                <!-- Kartu Film -->
+                <div class="movie-card">
+                    <img src="https://via.placeholder.com/200x300/333/fff?text=Lokal+1" alt="Movie 1">
+                </div>
+                <div class="movie-card">
+                    <img src="https://via.placeholder.com/200x300/333/fff?text=Lokal+2" alt="Movie 2">
+                </div>
+                <div class="movie-card">
+                    <img src="https://via.placeholder.com/200x300/333/fff?text=Lokal+3" alt="Movie 3">
+                </div>
+                <div class="movie-card">
+                    <img src="https://via.placeholder.com/200x300/333/fff?text=Lokal+4" alt="Movie 4">
+                </div>
+                 <div class="movie-card">
+                    <img src="https://via.placeholder.com/200x300/333/fff?text=Lokal+5" alt="Movie 5">
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+        
+    </main>
     
-    <!-- 4. PEMERAN -->
-    <section id="pemeran" class="section-padding">
-        <div class="container">
-            <h2 class="section-title">Pemeran Utama</h2>
-            <div class="cast-grid">
-                <!-- Kartu Pemeran 1 -->
-                <div class="cast-card">
-                    <img src="https://via.placeholder.com/300x300.png?text=Foto+Aktor" alt="Foto Pemeran">
-                    <h3>Nama Aktor</h3>
-                    <p>Nama Karakter</p>
-                </div>
-                 <!-- Kartu Pemeran 2 -->
-                <div class="cast-card">
-                    <img src="https://via.placeholder.com/300x300.png?text=Foto+Aktris" alt="Foto Pemeran">
-                    <h3>Nama Aktris</h3>
-                    <p>Nama Karakter</p>
-                </div>
-                 <!-- Kartu Pemeran 3 -->
-                <div class="cast-card">
-                    <img src="https://via.placeholder.com/300x300.png?text=Foto+Aktor" alt="Foto Pemeran">
-                    <h3>Nama Aktor Lain</h3>
-                    <p>Nama Karakter</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. JADWAL / STREAMING -->
-    <section id="jadwal" class="section-padding bg-dark">
-        <div class="container text-center">
-            <h2 class="section-title">Tonton Sekarang</h2>
-            <p>Tersedia di bioskop kesayangan Anda dan platform streaming.</p>
-            <div class="streaming-logos">
-                <i class="fab fa-netflix fa-3x"></i>
-                <i class="fab fa-youtube fa-3x"></i>
-                <i class="fab fa-apple fa-3x"></i>
-            </div>
-            <button class="btn btn-primary" style="margin-top: 2rem;">Lihat Semua Jadwal</button>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="main-footer">
-        <div class="container">
-            <h3>CineVerse</h3>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-            </div>
-            <p>&copy; 2025 Studio Produksi Anda. Hak Cipta Dilindungi.</p>
-        </div>
-    </footer>
-    
-    <!-- MODAL/POP-UP TRAILER -->
-    <div id="trailer-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <!-- Ganti dengan kode embed trailer YouTube -->
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-    </div>
+    <!-- FOOTER akan ditambahkan jika perlu -->
 
     <script src="script.js"></script>
 </body>
