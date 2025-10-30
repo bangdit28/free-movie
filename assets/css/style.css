@@ -1,23 +1,18 @@
 :root {
-    --primary-red: #E50914;
-    --background-color: #0c0c0c;
-    --card-bg: #1a1a1a;
-    --text-color: #ffffff;
-    --text-secondary: #aaaaaa;
-    --font-display: 'Bebas Neue', sans-serif;
-    --font-body: 'Montserrat', sans-serif;
-    --transition-smooth: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    --primary-red: #E50914; --background-color: #0c0c0c; --card-bg: #1a1a1a; --text-color: #ffffff; --text-secondary: #aaaaaa;
+    --font-display: 'Bebas Neue', sans-serif; --font-body: 'Montserrat', sans-serif; --transition-smooth: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: var(--font-body); background: var(--background-color); color: var(--text-color); overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
 .container { width: 95%; max-width: 1600px; margin: auto; }
 button { background: none; border: none; color: inherit; cursor: pointer; }
 .main-header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 1.2rem 0; transition: background-color 0.3s ease; }
 .main-header.scrolled { background-color: rgba(12, 12, 12, 0.7); backdrop-filter: blur(15px); }
 .main-header .container { display: flex; align-items: center; }
-.logo { font-family: var(--font-display); font-size: 2.2rem; color: var(--primary-red); text-decoration: none; margin-right: 2.5rem; }
+.logo { font-family: var(--font-display); font-size: 2.2rem; color: var(--primary-red); margin-right: 2.5rem; }
 .main-nav { flex-grow: 1; display: flex; gap: 1.5rem; }
-.nav-link { font-size: 0.9rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: color 0.3s; }
+.nav-link { font-size: 0.9rem; font-weight: 500; color: var(--text-secondary); transition: color 0.3s; }
 .nav-link.active, .nav-link:hover { color: var(--text-color); }
 .user-nav { display: flex; align-items: center; gap: 1rem; }
 .nav-action { font-size: 1.2rem; }
@@ -44,10 +39,6 @@ button { background: none; border: none; color: inherit; cursor: pointer; }
 .carousel-wrapper:hover .carousel-arrow { opacity: 1; }
 .carousel-arrow.prev { left: 0; }
 .carousel-arrow.next { right: 0; }
-.movie-card-link {
-    text-decoration: none;
-    color: inherit;
-}
 .movie-card { position: relative; flex: 0 0 16.66%; aspect-ratio: 2 / 3; border-radius: 5px; overflow: hidden; transition: var(--transition-smooth); cursor: pointer; }
 .movie-card img { width: 100%; height: 100%; object-fit: cover; }
 .card-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 1rem; background: linear-gradient(to top, rgba(0,0,0,0.9) 10%, transparent); opacity: 0; transform: translateY(20px); transition: var(--transition-smooth); }
@@ -58,7 +49,30 @@ button { background: none; border: none; color: inherit; cursor: pointer; }
 .movie-card:hover { transform: scale(1.15) translateY(-15px); z-index: 30; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
 .movie-card:hover .card-overlay { opacity: 1; transform: translateY(0); }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+/* --- ASET NAVIGASI SELULER --- */
+.hamburger-menu { display: none; font-size: 1.5rem; margin-right: 1.5rem; align-items: center; }
+.nav-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); z-index: 1999; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
+.nav-overlay.active { opacity: 1; visibility: visible; }
+.mobile-nav { position: fixed; top: 0; left: 0; width: 280px; height: 100%; background: var(--background-color); z-index: 2000; padding: 1.5rem; transform: translateX(-100%); transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1); }
+.mobile-nav.open { transform: translateX(0); }
+.mobile-nav-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 1.5rem; border-bottom: 1px solid #333; }
+.profile-info { display: flex; align-items: center; gap: 1rem; font-weight: 700; }
+.close-btn { font-size: 2.5rem; color: var(--text-secondary); line-height: 1; }
+.mobile-nav-links { list-style: none; margin-top: 2rem; }
+.mobile-nav-links li a { display: flex; align-items: center; gap: 1rem; padding: 1rem 0; color: var(--text-secondary); font-size: 1.1rem; font-weight: 500; transition: color 0.3s ease; }
+.mobile-nav-links li a:hover, .mobile-nav-links li a.active { color: var(--text-color); }
+
+/* --- MEDIA QUERIES --- */
 @media(max-width: 1200px) { .movie-card { flex: 0 0 20%; } }
 @media(max-width: 992px) { .movie-card { flex: 0 0 25%; } }
-
-@media(max-width: 768px) { .featured-title-logo img { max-width: 300px; } .featured-desc { font-size: 0.9rem; max-width: 100%; } .main-nav { display: none; } .movie-card { flex: 0 0 33.33%; } }
+@media(max-width: 768px) {
+    .main-nav { display: none; }
+    .hamburger-menu { display: flex; }
+    .logo { margin-right: auto; }
+    .user-nav { gap: 0.8rem; }
+    .featured-title-logo img { max-width: 300px; }
+    .featured-desc { font-size: 0.9rem; max-width: 100%; }
+    .hero-content { max-width: 80%; }
+    .movie-card { flex: 0 0 33.33%; }
+}
