@@ -12,9 +12,10 @@
 
     <header class="main-header">
         <div class="container">
-            <a href="#" class="logo">CineMAX</a>
+            <button class="hamburger-menu"><i class="fas fa-bars"></i></button>
+            <a href="index.html" class="logo">CineMAX</a>
             <nav class="main-nav">
-                <a href="#" class="nav-link active">Beranda</a>
+                <a href="index.html" class="nav-link active">Beranda</a>
                 <a href="#" class="nav-link">Serial</a>
                 <a href="#" class="nav-link">Film</a>
                 <a href="#" class="nav-link">Daftar Saya</a>
@@ -30,15 +31,29 @@
         </div>
     </header>
 
-    <section class="hero-section">
-        <div class="hero-video-wrapper">
-            <video src="https://assets.mixkit.co/videos/preview/mixkit-planets-in-space-42289-large.mp4" autoplay muted loop playsinline class="hero-video"></video>
+    <div class="nav-overlay"></div>
+    <nav class="mobile-nav">
+        <div class="mobile-nav-header">
+            <div class="profile-info">
+                <img src="https://i.pravatar.cc/40" alt="User Profile" class="profile-pic">
+                <span>Nama Profil</span>
+            </div>
+            <button class="close-btn">&times;</button>
         </div>
+        <ul class="mobile-nav-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> Beranda</a></li>
+            <li><a href="#"><i class="fas fa-tv"></i> Serial</a></li>
+            <li><a href="#"><i class="fas fa-film"></i> Film</a></li>
+            <li><a href="#"><i class="fas fa-plus"></i> Daftar Saya</a></li>
+            <li><a href="#"><i class="fas fa-tag"></i> Genre</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero-section">
+        <div class="hero-video-wrapper"><video src="https://assets.mixkit.co/videos/preview/mixkit-planets-in-space-42289-large.mp4" autoplay muted loop playsinline class="hero-video"></video></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="featured-title-logo">
-                <img src="https://www.themoviedb.org/t/p/original/s4c9Q2dttn7stS3a7oIzf7k0weC.png" alt="Dune Logo">
-            </h1>
+            <h1 class="featured-title-logo"><img src="https://www.themoviedb.org/t/p/original/s4c9Q2dttn7stS3a7oIzf7k0weC.png" alt="Dune Logo"></h1>
             <p class="featured-desc">Perjalanan seorang pahlawan mitos dan emosional, "Dune" menceritakan kisah Paul Atreides, seorang pemuda brilian yang ditakdirkan untuk hal-hal besar.</p>
             <div class="hero-buttons">
                 <button class="btn btn-play"><i class="fas fa-play"></i> Putar</button>
