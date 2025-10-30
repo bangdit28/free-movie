@@ -50,13 +50,11 @@
     </nav>
 
     <section class="hero-section">
-        <div class="hero-video-wrapper"><video src="https://assets.mixkit.co/videos/preview/mixkit-planets-in-space-42289-large.mp4" autoplay muted loop playsinline class="hero-video"></video></div>
+        <img src="" alt="Hero Background" class="hero-background" id="hero-bg">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <!-- DIHAPUS: Logo Dune yang besar -->
-            <!-- DIGANTI: Judul dan deskripsi dinamis dari JS -->
-            <h1 class="featured-title" id="hero-title">JUDUL FILM UNGGULAN</h1>
-            <p class="featured-desc" id="hero-desc">Deskripsi singkat film unggulan akan muncul di sini.</p>
+            <h1 class="featured-title" id="hero-title">Memuat Film...</h1>
+            <p class="featured-desc" id="hero-desc"></p>
             <div class="hero-buttons">
                 <button class="btn btn-play" id="hero-play-btn"><i class="fas fa-play"></i> Putar</button>
                 <button class="btn btn-info" id="hero-info-btn"><i class="fas fa-info-circle"></i> Info Selengkapnya</button>
@@ -91,7 +89,85 @@
         </section>
     </main>
 
-    <script src="assets/data/database.js"></script>
     <script src="assets/js/main.js"></script>
+</body>
+</html>```
+
+---
+
+#### **2. File: `/detail.html`**
+
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Film - CineMAX</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+<body>
+
+    <header class="main-header scrolled">
+        <div class="container">
+            <button class="hamburger-menu"><i class="fas fa-bars"></i></button>
+            <a href="index.html" class="logo">CineMAX</a>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Beranda</a>
+                <a href="#" class="nav-link">Serial</a>
+                <a href="#" class="nav-link">Film</a>
+                <a href="#" class="nav-link">Daftar Saya</a>
+            </nav>
+            <div class="user-nav">
+                <button class="nav-action"><i class="fas fa-search"></i></button>
+                <button class="nav-action"><i class="fas fa-bell"></i></button>
+                <div class="profile-dropdown">
+                    <img src="https://i.pravatar.cc/40" alt="User Profile" class="profile-pic">
+                    <i class="fas fa-caret-down"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="nav-overlay"></div>
+    <nav class="mobile-nav">
+        <div class="mobile-nav-header">
+            <div class="profile-info">
+                <img src="https://i.pravatar.cc/40" alt="User Profile" class="profile-pic">
+                <span>Nama Profil</span>
+            </div>
+            <button class="close-btn">&times;</button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> Beranda</a></li>
+            <li><a href="#"><i class="fas fa-tv"></i> Serial</a></li>
+            <li><a href="#"><i class="fas fa-film"></i> Film</a></li>
+            <li><a href="#"><i class="fas fa-plus"></i> Daftar Saya</a></li>
+            <li><a href="#"><i class="fas fa-tag"></i> Genre</a></li>
+        </ul>
+    </nav>
+
+    <main class="detail-container" id="detail-main">
+        <div class="hero-overlay"></div>
+        <div id="movie-detail-content">
+            <!-- Konten info film akan dirender oleh JS di sini -->
+        </div>
+
+        <section class="player-section" id="movie-player-section">
+            <h2>Sedang Memutar</h2>
+            <div class="player-wrapper" id="player-wrapper">
+                <!-- Iframe akan dimasukkan oleh JS di sini -->
+            </div>
+        </section>
+
+        <div id="trailer-section-container">
+            <!-- Konten trailer akan dirender oleh JS di sini -->
+        </div>
+    </main>
+
+    <script src="assets/js/detail.js"></script>
 </body>
 </html>
