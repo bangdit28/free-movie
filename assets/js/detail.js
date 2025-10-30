@@ -1,8 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const hamburgerBtn = document.querySelector('.hamburger-menu'), mobileNav = document.querySelector('.mobile-nav'), closeBtn = document.querySelector('.close-btn'), navOverlay = document.querySelector('.nav-overlay');
-    const openNav = () => { mobileNav.classList.add('open'); navOverlay.classList.add('active'); };
-    const closeNav = () => { mobileNav.classList.remove('open'); navOverlay.classList.remove('active'); };
-    hamburgerBtn.addEventListener('click', openNav); closeBtn.addEventListener('click', closeNav); navOverlay.addEventListener('click', closeNav);
+    
+    // --- [FIX] LOGIKA NAVIGASI SELULER YANG DIPERBAIKI ---
+    const hamburgerBtn = document.querySelector('.hamburger-menu');
+    const mobileNav = document.querySelector('.mobile-nav');
+    const closeBtn = document.querySelector('.close-btn');
+    const navOverlay = document.querySelector('.nav-overlay');
+
+    // Pastikan semua elemen ada sebelum menambahkan event listener
+    if (hamburgerBtn && mobileNav && closeBtn && navOverlay) {
+        const openNav = () => {
+            mobileNav.classList.add('open');
+            navOverlay.classList.add('active');
+        };
+
+        const closeNav = () => {
+            mobileNav.classList.remove('open');
+            navOverlay.classList.remove('active');
+        };
+
+        hamburgerBtn.addEventListener('click', openNav);
+        closeBtn.addEventListener('click', closeNav);
+        navOverlay.addEventListener('click', closeNav);
+    }
+    // --- AKHIR DARI FIX ---
 
     const urlParams = new URLSearchParams(window.location.search), movieId = parseInt(urlParams.get('id'));
     const movieDatabase = JSON.parse(localStorage.getItem('movieDB')) || initialMovieData;
