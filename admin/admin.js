@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // --- [SANGAT PENTING] SCRIPT KEAMANAN ---
+    // Cek apakah user sudah login. Jika belum, tendang kembali ke halaman login.
+    if (sessionStorage.getItem('isAdminLoggedIn') !== 'true') {
+        window.location.href = 'login.html';
+        return; // Hentikan eksekusi sisa script jika belum login
+    }
+    // --- AKHIR SCRIPT KEAMANAN ---
+
     const API_KEY = 'bda883e3019106157c9a9c5cfe3921bb';
     const TMDB_SEARCH_URL = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=id&include_adult=false&query=`;
     const IMG_URL = 'https://image.tmdb.org/t/p/w500';
@@ -27,6 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
                             <option value="baru" ${movie.category === 'baru' ? 'selected' : ''}>Baru</option>
                             <option value="indonesia" ${movie.category === 'indonesia' ? 'selected' : ''}>Indonesia</option>
                         </select>
+                    </td>
+                    <td>
+                        <input type="text" class="embed-override-input" placeholder="Kosong = pakai default" data-id="${movie.id}" value="${movie.embed_override_url || ''}">
                     </td>
                     <td><button class="delete-btn" data-id="${movie.id}">Hapus</button></td>
                 </tr>`;
@@ -71,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 id: movieData.id, title: movieData.title, overview: movieData.overview,
                 poster_path: movieData.poster_path, backdrop_path: movieData.backdrop_path,
                 release_date: movieData.release_date, vote_average: movieData.vote_average,
-                category: 'populer'
+                category: 'populer', embed_override_url: ''
             };
             localMovieDB.push(movieToAdd);
             saveToLocalStorage();
@@ -86,22 +97,24 @@ document.addEventListener('DOMContentLoaded', () => {
     function handleSiteMovieActions(e) {
         const target = e.target;
         const movieId = parseInt(target.getAttribute('data-id'));
+        const movieIndex = localMovieDB.findIndex(movie => movie.id === movieId);
+        if (movieIndex === -1) return;
+
         if (target.classList.contains('delete-btn')) {
             if (confirm('Yakin ingin menghapus film ini dari situs Anda?')) {
-                localMovieDB = localMovieDB.filter(movie => movie.id !== movieId);
+                localMovieDB.splice(movieIndex, 1);
                 saveToLocalStorage();
                 renderSiteMovies();
-                displaySearchResults([]); 
-                searchInput.value = '';
+                displaySearchResults([]); searchInput.value = '';
             }
         }
         if (target.classList.contains('category-select')) {
-            const newCategory = target.value;
-            const movieIndex = localMovieDB.findIndex(movie => movie.id === movieId);
-            if(movieIndex > -1) {
-                localMovieDB[movieIndex].category = newCategory;
-                saveToLocalStorage();
-            }
+            localMovieDB[movieIndex].category = target.value;
+            saveToLocalStorage();
+        }
+        if (target.classList.contains('embed-override-input')) {
+            localMovieDB[movieIndex].embed_override_url = target.value;
+            saveToLocalStorage();
         }
     }
 
@@ -110,6 +123,6 @@ document.addEventListener('DOMContentLoaded', () => {
     searchResultsContainer.addEventListener('click', addMovieToSite);
     siteMovieTableBody.addEventListener('change', handleSiteMovieActions);
     siteMovieTableBody.addEventListener('click', handleSiteMovieActions);
-
+    
     renderSiteMovies();
 });
