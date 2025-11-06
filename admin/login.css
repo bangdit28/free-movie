@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0c0c0c;
+    color: #fff;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+}
+#login-form {
+    background-color: #1a1a1a;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+h1 {
+    text-align: center;
+    color: #E50914;
+    margin-bottom: 1.5rem;
+}
+.input-group {
+    margin-bottom: 1.5rem;
+}
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #aaa;
+}
+input {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #333;
+    border: 1px solid #555;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+}
+button {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #E50914;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #b20710;
+}
+.error-message {
+    color: #ff4d4d;
+    background-color: rgba(255, 77, 77, 0.1);
+    padding: 0.8rem;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 1rem;
+    display: none; /* Sembunyi secara default */
+}
