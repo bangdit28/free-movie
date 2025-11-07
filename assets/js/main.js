@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function loadContentFromLocalDB() {
         const localMovieDB = JSON.parse(localStorage.getItem('cineMaxDB')) || [];
+        
         populateHero(localMovieDB[0]);
         populateCarousel('populer-carousel', localMovieDB, 'populer');
         populateCarousel('baru-carousel', localMovieDB, 'baru');
@@ -26,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (!movie) {
             heroTitle.textContent = "Tambahkan Film di Panel Admin";
-            heroDesc.textContent = "";
+            heroDesc.textContent = "Website ini ditenagai oleh database film pilihan Anda. Silakan masuk ke panel admin untuk mulai mencari dan menambahkan film ke halaman utama.";
             heroBg.src = "";
             return;
         };
